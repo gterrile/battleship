@@ -1,9 +1,5 @@
 import Ship from './ship.js'
 
-
-
-
-
 class Gameboard {
   // place ships
   // receiveAttack, determine if hit and record coordinates
@@ -23,9 +19,11 @@ class Gameboard {
     this.board = board
   }
   placeShip(ship, coordinates) {
-    let r = coordinates[0]
-    let c = coordinates[1]
-    this.board[r][c] = ship
+    for (let i = 0; i < coordinates.length(); i++) {
+      let r = coordinates[i][0]
+      let c = coordinates[i][1]
+      this.board[r][c] = ship
+    }
   }
   receiveAttack(coordinates) {
     if (this.board[coordinates] != 0) { // invalid move
@@ -59,5 +57,7 @@ function generateFleet() {
 
 let german = new Player('german')
 console.log(german)
-german.board.placeShip('c',[1,4])
+
+//german.board.placeShip(german.fleet.carrier.coordinates)
+german.fleet.carrier.setCoordinates([[1,4],[2,4],[3,4],[4,4],[5,4]])
 console.log(german)
