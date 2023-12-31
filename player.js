@@ -2,10 +2,11 @@ import Gameboard from "./gameboard.js"
 import Ship from "./ship.js"
 
 export default class Player {
-  constructor(name, board) {
+  constructor(name) {
     this.name = name,
     this.board = new Gameboard()
     this.fleet = this.generateFleet()
+    this.attemps = []
   }
   generateFleet() {
     const carrier = new Ship(5)
@@ -22,6 +23,11 @@ export default class Player {
     }
   }
   attack(r,c) {
-    return [r,c]
+    const attemp = [r,c]
+    return attemp
+  }
+  recordReply(reply) {
+    this.attemps.push(reply)
   }
 }
+

@@ -1,9 +1,9 @@
 import Player from "./player.js"
 
 export default class Game {
-  constructor(turn = null) {
-    this.player = new Player('playerOne')
-    this.computer = new Player('computer')
+  constructor(player, oponent, turn = null) {
+    this.player = new Player(player)
+    this.computer = new Player(oponent)
     this.turn = turn
   }
   switchTurns() {

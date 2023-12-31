@@ -24,8 +24,21 @@ export default class Gameboard {
     }
   }
   receiveAttack(coordinates) {
-    if (this.board[coordinates] != 0) { // invalid move
-      
+    // this method should return miss or hit
+    let r = coordinates[0]
+    let c = coordinates[1]
+
+    if (this.board[r][c] == 0) { // if miss
+      return {
+        attemp: [r,c],
+        status: 'miss'
+      }
+    } else {  // if hit
+      this.board[r][c] = 0
+      return {
+        attemp: [r,c],
+        status: 'hit'
+      }
     }
   }
 }
