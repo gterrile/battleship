@@ -1,17 +1,20 @@
 import Player from "./player.js"
 
 export default class Game {
-  constructor(player, oponent, turn = null) {
-    this.player = new Player(player)
-    this.computer = new Player(oponent)
-    this.turn = turn
+  constructor() {
+    this.player = new Player('player')
+    this.computer = new Player('computer')
+    this.attacker = this.player
+    this.defender = this.computer
+    this.winner = null
   }
   switchTurns() {
-    if (this.turn == null) return this.turn == this.player
-    if (this.turn == this.player) {
-      return this.turn == this.computer
+    if (this.attacker == this.player) {
+      this.attacker = this.computer
+      this.defender = this.player
     } else {
-      return this.turn == this.player
+      this.attacker == this.player
+      this.defender = this.computer
     }
   }
 }
