@@ -12,3 +12,18 @@ export function createBoardSquares() {
     computerBoard.appendChild(computerSquare)
   }
 }
+
+export function userInputAttemp() {
+  const squares = document.querySelectorAll('.square')
+  squares.forEach(square => {
+    square.addEventListener('click', () => {
+      return convertToArraySyntax(square.id)
+    })
+  })
+}
+
+function convertToArraySyntax(num) {
+  let row = parseInt(num / 10)
+  let col = num % 10
+  return [row, col] 
+}
