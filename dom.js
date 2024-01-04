@@ -1,3 +1,5 @@
+import { gameScript } from "./game.js"
+
 export function createBoardSquares() {
   const playerBoard = document.getElementById('playerBoard')
   const computerBoard = document.getElementById('computerBoard')
@@ -13,17 +15,12 @@ export function createBoardSquares() {
   }
 }
 
-export function userInputAttemp() {
+export function userInputAttemp(game) {
   const squares = document.querySelectorAll('.square')
   squares.forEach(square => {
     square.addEventListener('click', () => {
-      return convertToArraySyntax(square.id)
+      gameScript(game, square)
     })
   })
 }
 
-function convertToArraySyntax(num) {
-  let row = parseInt(num / 10)
-  let col = num % 10
-  return [row, col] 
-}
