@@ -1,3 +1,10 @@
+.boards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
 .gameBoard {
   height: 400px;
   width: 400px;
@@ -14,4 +21,16 @@
 
 .square:hover {
   background-color: lightgreen;
+}
+
+.hit {
+  background-color: tomato;
+}
+
+.miss {
+  background-color: lightskyblue;
+}
+
+.ship {
+  background-color: rgb(44, 44, 44);
 }
