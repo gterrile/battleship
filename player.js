@@ -19,7 +19,8 @@ export default class Player {
       battleship: battleship,
       destroyer: destroyer,
       submarine: submarine,
-      patrolBoat: patrolBoat
+      patrolBoat: patrolBoat,
+      isFullyPlaced: false
     }
   }
   attack(r,c) {

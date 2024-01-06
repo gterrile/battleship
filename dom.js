@@ -29,3 +29,21 @@ export function userInputAttemp(game) {
   })
 }
 
+// Update board with fleet placement
+export function updateBoard(game) {
+  const playerSquares = document.querySelectorAll('.player')
+  const playerBoard = game.player.board.board
+  //console.log(playerSquares)
+  // check if empty of ship
+  for (let r = 0; r < 10; r++) {
+    for (let c = 0; c < 10; c++) {
+      if (playerBoard[r][c] == 0) {
+        let lightSquare = (r * 10) + c
+        playerSquares[lightSquare].style.backgroundColor = 'lightskyblue'
+      } else {
+        let darkSquare = (r * 10) + c
+        playerSquares[darkSquare].style.backgroundColor = 'gray'
+      }
+    }
+  }
+}

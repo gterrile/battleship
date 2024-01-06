@@ -1,4 +1,4 @@
-.boards {
+.boardsContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,11 +16,11 @@
 }
 
 .square {
-  background-color: lightgray;
+  background-color: lightskyblue;
 }
 
 .square:hover {
-  background-color: lightgreen;
+  background-color: tomato;
 }
 
 .hit {
@@ -28,7 +28,7 @@
 }
 
 .miss {
-  background-color: lightskyblue;
+  background-color: white;
 }
 
 .ship {

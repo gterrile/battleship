@@ -16,11 +16,11 @@ export default class Gameboard {
       [0,0,0,0,0,0,0,0,0,0]
     ]
   }
-  placeShip(ship, coordinates) {
+  placeShip(coordinates) {
     for (let i = 0; i < coordinates.length; i++) {
       let r = coordinates[i][0]
       let c = coordinates[i][1]
-      this.board[r][c] = ship
+      this.board[r][c] = 1
     }
   }
   receiveAttack(coordinates) {
