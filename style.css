@@ -19,10 +19,6 @@
   background-color: lightskyblue;
 }
 
-.square:hover {
-  background-color: tomato;
-}
-
 .hit {
   background-color: tomato;
 }

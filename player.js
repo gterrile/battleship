@@ -23,6 +23,7 @@ export default class Player {
       isFullyPlaced: false
     }
   }
+
   attack(r,c) {
     const attemp = [r,c]
     return attemp

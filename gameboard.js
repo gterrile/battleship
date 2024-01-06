@@ -20,7 +20,7 @@ export default class Gameboard {
     for (let i = 0; i < coordinates.length; i++) {
       let r = coordinates[i][0]
       let c = coordinates[i][1]
-      this.board[r][c] = 1
+      this.board[r][c] = 'X'
     }
   }
   receiveAttack(coordinates) {
