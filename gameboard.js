@@ -20,7 +20,7 @@ export default class Gameboard {
     for (let i = 0; i < coordinates.length; i++) {
       let r = coordinates[i][0]
       let c = coordinates[i][1]
-      this.board[r][c] = 'X'
+      this.board[r][c] = 's'
     }
   }
   receiveAttack(coordinates) {
@@ -28,13 +28,14 @@ export default class Gameboard {
     let r = coordinates[0]
     let c = coordinates[1]
 
-    if (this.board[r][c] == 0) { // if miss
+    if (this.board[r][c] === 0) { // if miss
+      this.board[r][c] = 'm'
       return {
         attemp: [r,c],
         status: 'miss'
       }
-    } else {  // if hit
-      this.board[r][c] = 0
+    } else if (this.board[r][c] === 's') {  // if hit
+      this.board[r][c] = 'h'
       return {
         attemp: [r,c],
         status: 'hit'

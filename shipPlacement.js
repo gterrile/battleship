@@ -14,7 +14,7 @@ if (!game.player.fleet.carrier.coordinates.length) {
     for (let i = parseInt(square.id); i < (parseInt(square.id) + 5); i++) {
       let squareCoordinates = numToArray(i)
       shipCoordinates.push(squareCoordinates)
-      playerSquares[i].style.backgroundColor = 'gray'
+      playerSquares[i].style.backgroundColor = 'black'
     }
     square.addEventListener('click', () => {
       game.player.board.placeShip(shipCoordinates)
@@ -28,7 +28,7 @@ if (!game.player.fleet.carrier.coordinates.length) {
     for (let i = parseInt(square.id); i < (parseInt(square.id) + 4); i++) {
       let squareCoordinates = numToArray(i)
       shipCoordinates.push(squareCoordinates)
-      playerSquares[i].style.backgroundColor = 'gray'
+      playerSquares[i].style.backgroundColor = 'black'
     }
     square.addEventListener('click', () => {
       game.player.board.placeShip(shipCoordinates)
@@ -42,7 +42,7 @@ if (!game.player.fleet.carrier.coordinates.length) {
     for (let i = parseInt(square.id); i < (parseInt(square.id) + 3); i++) {
       let squareCoordinates = numToArray(i)
       shipCoordinates.push(squareCoordinates)
-      playerSquares[i].style.backgroundColor = 'gray'
+      playerSquares[i].style.backgroundColor = 'black'
     }
     square.addEventListener('click', () => {
       game.player.board.placeShip(shipCoordinates)
@@ -56,7 +56,7 @@ if (!game.player.fleet.carrier.coordinates.length) {
     for (let i = parseInt(square.id); i < (parseInt(square.id) + 3); i++) {
       let squareCoordinates = numToArray(i)
       shipCoordinates.push(squareCoordinates)
-      playerSquares[i].style.backgroundColor = 'gray'
+      playerSquares[i].style.backgroundColor = 'black'
     }
     square.addEventListener('click', () => {
       game.player.board.placeShip(shipCoordinates)
@@ -69,7 +69,7 @@ if (!game.player.fleet.carrier.coordinates.length) {
     for (let i = parseInt(square.id); i < (parseInt(square.id) + 2); i++) {
       let squareCoordinates = numToArray(i)
       shipCoordinates.push(squareCoordinates)
-      playerSquares[i].style.backgroundColor = 'gray'
+      playerSquares[i].style.backgroundColor = 'black'
     }
     square.addEventListener('click', () => {
       game.player.board.placeShip(shipCoordinates)

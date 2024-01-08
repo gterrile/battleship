@@ -33,17 +33,41 @@ export function userInputAttemp(game) {
 export function updateBoard(game) {
   const playerSquares = document.querySelectorAll('.player')
   const playerBoard = game.player.board.board
-  //console.log(playerSquares)
-  // check if empty of ship
+  const computerSquares = document.querySelectorAll('.computer')
+  const computerBoard = game.computer.board.board
+
   for (let r = 0; r < 10; r++) {
     for (let c = 0; c < 10; c++) {
+      
       if (playerBoard[r][c] == 0) {
         let lightSquare = (r * 10) + c
         playerSquares[lightSquare].style.backgroundColor = 'lightskyblue'
-      } else {
+      } else if (playerBoard[r][c] == 's'){
         let darkSquare = (r * 10) + c
-        playerSquares[darkSquare].style.backgroundColor = 'gray'
+        playerSquares[darkSquare].style.backgroundColor = 'black'
+      } else if (playerBoard[r][c] == 'h'){
+        let darkSquare = (r * 10) + c
+        playerSquares[darkSquare].style.backgroundColor = 'tomato'
+      } else if (playerBoard[r][c] == 'm'){
+        let darkSquare = (r * 10) + c
+        playerSquares[darkSquare].style.backgroundColor = 'white'
+      }
+
+      if (computerBoard[r][c] == 0) {
+        let lightSquare = (r * 10) + c
+        computerSquares[lightSquare].style.backgroundColor = 'lightskyblue'
+      } else if (computerBoard[r][c] == 's'){
+        let darkSquare = (r * 10) + c
+        computerSquares[darkSquare].style.backgroundColor = 'black'
+      } else if (computerBoard[r][c] == 'h'){
+        let darkSquare = (r * 10) + c
+        computerSquares[darkSquare].style.backgroundColor = 'tomato'
+      }
+      else if (computerBoard[r][c] == 'm'){
+        let darkSquare = (r * 10) + c
+        computerSquares[darkSquare].style.backgroundColor = 'white'
       }
     }
+
   }
 }
