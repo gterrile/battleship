@@ -1,7 +1,4 @@
 export default class Gameboard {
-  // place ships
-  // receiveAttack, determine if hit and record coordinates
-  // check if all ships are sunk
   constructor () {
     this.board = [
       [0,0,0,0,0,0,0,0,0,0],
@@ -42,4 +39,5 @@ export default class Gameboard {
       }
     }
   }
+
 }

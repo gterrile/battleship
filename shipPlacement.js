@@ -78,11 +78,6 @@ if (!game.player.fleet.carrier.coordinates.length) {
   } 
 } else {
   game.player.fleet.isFullyPlaced = true
-  console.log(game)
 }
-
-
-
-
 
 }

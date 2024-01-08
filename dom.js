@@ -1,5 +1,3 @@
-import { gameScript, alreadyAttemped } from "./game.js"
-
 
 export function createBoardSquares() {
   const playerBoard = document.getElementById('playerBoard')
@@ -18,18 +16,7 @@ export function createBoardSquares() {
   }
 }
 
-export function userInputAttemp(game) {
-  const squares = document.querySelectorAll('.square')
-  squares.forEach(square => {
-    square.addEventListener('click', () => {
-      if (!alreadyAttemped(game, square.id)) {
-        gameScript(game, square)
-      }
-    })
-  })
-}
 
-// Update board with fleet placement
 export function updateBoard(game) {
   const playerSquares = document.querySelectorAll('.player')
   const playerBoard = game.player.board.board
@@ -50,7 +37,7 @@ export function updateBoard(game) {
         playerSquares[darkSquare].style.backgroundColor = 'tomato'
       } else if (playerBoard[r][c] == 'm'){
         let darkSquare = (r * 10) + c
-        playerSquares[darkSquare].style.backgroundColor = 'white'
+        playerSquares[darkSquare].style.backgroundColor = 'rgb(200, 235, 255)'
       }
 
       if (computerBoard[r][c] == 0) {
@@ -58,14 +45,14 @@ export function updateBoard(game) {
         computerSquares[lightSquare].style.backgroundColor = 'lightskyblue'
       } else if (computerBoard[r][c] == 's'){
         let darkSquare = (r * 10) + c
-        computerSquares[darkSquare].style.backgroundColor = 'black'
+        computerSquares[darkSquare].style.backgroundColor = 'lightskyblue'
       } else if (computerBoard[r][c] == 'h'){
         let darkSquare = (r * 10) + c
         computerSquares[darkSquare].style.backgroundColor = 'tomato'
       }
       else if (computerBoard[r][c] == 'm'){
         let darkSquare = (r * 10) + c
-        computerSquares[darkSquare].style.backgroundColor = 'white'
+        computerSquares[darkSquare].style.backgroundColor = 'rgb(200, 235, 255)'
       }
     }
 
