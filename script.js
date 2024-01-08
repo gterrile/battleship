@@ -3,16 +3,10 @@ import { createBoardSquares, userInputAttemp, updateBoard } from "./dom.js"
 import { numToArray } from "./game.js"
 import { shipPlacement } from "./shipPlacement.js"
 import areAllSunk from "./areAllSunk.js"
+import { computerRandomAttack } from "./computer.js"
 
 // Create main variable game
 let game = new Game()
-
-
-function attackOn(square) {
-  const reply = game.computer.board.receiveAttack(numToArray(square.id))
-  game.player.recordReply(reply)
-  // from here build the game loop.
-}
 
 function placeOnBoard(shipLength) {
   const computerSquares = document.querySelectorAll('.computer')
@@ -85,31 +79,30 @@ playerSquares.forEach(square => {
 // Only once players fleet is set will allow user to attack on hovered square
 const computerSquares = document.querySelectorAll('.computer')
 computerSquares.forEach(square => {
-  // square.addEventListener('onmouseover', () => {
-  //   if (game.player.fleet.isFullyPlaced) {
-  //     square.style.backgroundColor = 'tomato'
-  //   }
-  // })
-  // square.addEventListener('onmouseout', () => {
-  //   updateBoard(game)
-  //   if (square.classList.contains('ship')) {
-  //     square.style.backgroundColor = 'black'
-  //   } else {
-  //     square.style.backgroundColor = 'lightskyblue'
-  //   }
-  // })
+
   square.addEventListener('click', () => {
     if (!game.winner) {
       if (game.player.fleet.isFullyPlaced) {
-        attackOn(square)
+        const reply = game.computer.board.receiveAttack(numToArray(square.id))
+        game.player.recordReply(reply)
         updateBoard(game)
         if (areAllSunk(game.computer)) {
           game.winner = game.player
-          console.log('winner')
+          console.log('player winner')
+        } else {
+          // computer counter attack
+          const playerReply = game.player.board.receiveAttack(computerRandomAttack())
+          game.computer.recordReply(playerReply)
+          updateBoard(game)
+          if (areAllSunk(game.player)) {
+            game.winner = game.computer
+            console.log('computer winner')
+          }        
         }
       }
     }
   })
+  
 })
 
 
